@@ -7,7 +7,7 @@ speedTestHelper = speedtest.Speedtest()
 
 speedTestHelper.get_best_server()
 pre_results = speedTestHelper.results.dict()
-print(f"You're testing from: {pre_results['client']['ip']} - {pre_results['client']['isp']} ISP")
+print(f"You're testing from: {pre_results['client']['ip']} - {pre_results['client']['isp']}")
 download = round(speedTestHelper.download() / (1024*1024), 2)
 upload = round(speedTestHelper.upload() / (1024*1024), 2)
 ping = round(speedTestHelper.results.dict()['ping'])
