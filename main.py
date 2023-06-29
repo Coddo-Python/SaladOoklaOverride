@@ -3,6 +3,7 @@ import subprocess
 import yaml
 import requests
 import json
+import os
 
 from rich import print
 
@@ -20,6 +21,7 @@ if is_admin():
 
     # Create venv
     subprocess.run(["python", "-m", "venv", f"{NDM_WORKLOAD}\\venv"])
+    subprocess.run([r"C:\ProgramData\Salad\workloads\ndm\venv\Scripts\python.exe", "-m", "pip", "install", "-r", f"{os.getcwd()}\\requirements.txt"])
 
     # Backup ndm.yaml
     shutil.copyfile(f"{WORKLOAD_DEFINITIONS}\\ndm.yaml", f"{WORKLOAD_DEFINITIONS}\\ndm_BACKUP.yaml")
